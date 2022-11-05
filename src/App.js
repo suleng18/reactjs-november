@@ -1,6 +1,9 @@
 import React from 'react';
-// import './App.css';
+import ColorBox from './components/ColorBox';
+import Counter from './components/Counter';
 import AlbumFeature from './features/Album';
+// import './App.css';
+import TodoFeature from './features/Todo';
 
 function App() {
   // const name = 'Long';
@@ -60,8 +63,10 @@ function App() {
           ))}
         </ul>
       </header> */}
-      {/* <TodoFeature /> */}
-      <AlbumFeature />
+      {/* <AlbumFeature /> */}
+      {/* <ColorBox /> */}
+      {/* <Counter /> */}
+      <TodoFeature />
     </div>
   );
 }
