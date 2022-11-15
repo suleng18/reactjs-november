@@ -12,27 +12,47 @@ function TodoFeature(props) {
   ];
 
   const [todoList, setTodoList] = useState(initTodoList);
+  const [filterStatus, setFilterStatus] = useState('all');
 
   const handleTodoClick = (todo, idx) => {
-    // clone current array to the new one
     const newTodoList = [...todoList];
-    console.log(todo, idx);
 
-    // toggle state
     newTodoList[idx] = {
       ...newTodoList[idx],
       status: newTodoList[idx].status === 'new' ? 'completed' : 'new',
     };
     // newTodoList[idx] = newTodo;
 
-    // update todo list
+    // toggle state
     setTodoList(newTodoList);
   };
+
+  const handleShowAllClick = () => {
+    setFilterStatus('all');
+  };
+
+  const handleShowCompletedClick = () => {
+    setFilterStatus('completed');
+  };
+
+  const handleShowNewClick = () => {
+    setFilterStatus('new');
+  };
+
+  const renderTodoList = todoList.filter(
+    (todo) => filterStatus === 'all' || filterStatus === todo.status,
+  );
 
   return (
     <div>
       <h3>TodoList</h3>
-      <TodoList todoList={todoList} onTodoClick={handleTodoClick} />
+      <TodoList todoList={renderTodoList} onTodoClick={handleTodoClick} />
+
+      <div>
+        <button onClick={handleShowAllClick}>Show All</button>
+        <button onClick={handleShowCompletedClick}>Show Completed</button>
+        <button onClick={handleShowNewClick}>Show New</button>
+      </div>
     </div>
   );
 }

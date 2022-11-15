@@ -63,13 +63,13 @@ function App() {
           ))}
         </ul>
       </header> */}
-      {/* <AlbumFeature /> */}
-      {/* <ColorBox /> */}
-      {/* <Counter /> */}
+
+      {/* <AlbumFeature />
+      <ColorBox />
+      <Counter /> */}
       <TodoFeature />
     </div>
   );
 }
 
 export default App;
-// ôn lại bài 16

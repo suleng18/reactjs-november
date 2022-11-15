@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import './styles.scss';
 
 TodoList.propTypes = {
@@ -25,7 +25,7 @@ function TodoList({ todoList, onTodoClick }) {
       {todoList.map((todo, idx) => (
         <li
           key={todo.id}
-          className={classnames({ 'todo-item': true, completed: todo.status === 'completed' })}
+          className={classNames({ 'todo-item': true, completed: todo.status === 'completed' })}
           onClick={() => handleTodoClick(todo, idx)}
         >
           {todo.title}
